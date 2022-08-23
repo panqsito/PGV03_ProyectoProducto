@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import javax.persistence.PersistenceException;
 import modelo.Usuario;
 import modelo.UsuarioJpaController;
 import proyecto_producto.ManagerFactory;
@@ -42,24 +43,26 @@ public class ControllerLogin {
     public void controlLogin() {
         String usuario = vist.getTxtusuario().getText();
         String clave = new String(vist.getTxtpassword().getPassword());
-
-        //inicializamos el objeto modelo
-        Usuario user = model.buscarUsuario(usuario, clave);
-        // controles
-        if (user != null) {
-            vista.setVisible(true);
-            Resouces.success("ATENCIÓN!!!", "Usuario Correcto :> \nBienvenid@ " + user.getIdpersonau().getNombre());
-            new ControllerAdmin(vista, manager);
-            limpiarLogin();
-            vist.dispose();
-        } else {
-            Resouces.error("ERROR!!!", "Usuario Incorrecto :<");
+        try {
+            //inicializamos el objeto modelo
+            Usuario user = model.buscarUsuario(usuario, clave);
+            // controles
+            if (user != null) {
+                vista.setVisible(true);
+                Resouces.success("ATENCIÓN!!!", "Usuario Correcto :> \nBienvenid@ " + user.getIdpersonau().getNombre());
+                new ControllerAdmin(vista, manager);
+                limpiarLogin();
+                vist.dispose();
+            } else {
+                Resouces.error("ERROR!!!", "Usuario Incorrecto :<");
+            }
+        }catch(PersistenceException e){
+            Resouces.error("ERRO!!!", "Conéctese a  la base de datos :<");
         }
 
     }
 
     //-------------------------------------------------------------------------
-    
     public void salir() {
         Resouces.success("ATENCIÓN!!!", "Saliendo del programa :< \nHasta pronto...");
         vista.dispose();
