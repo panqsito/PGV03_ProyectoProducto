@@ -27,6 +27,22 @@ public class ViewPersonas extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnReporteGeneral() {
+        return btnReporteGeneral;
+    }
+
+    public void setBtnReporteGeneral(JButton btnReporteGeneral) {
+        this.btnReporteGeneral = btnReporteGeneral;
+    }
+
+    public JButton getBtnReporteIndividual() {
+        return btnReporteIndividual;
+    }
+
+    public void setBtnReporteIndividual(JButton btnReporteIndividual) {
+        this.btnReporteIndividual = btnReporteIndividual;
+    }
+
     public JButton getBtnbuscarPer() {
         return btnbuscarPer;
     }
@@ -65,22 +81,6 @@ public class ViewPersonas extends javax.swing.JInternalFrame {
 
     public void setBtnguardarPer(JButton btnguardarPer) {
         this.btnguardarPer = btnguardarPer;
-    }
-
-    public JButton getBtnimprimirPer() {
-        return btnimprimirPer;
-    }
-
-    public void setBtnimprimirPer(JButton btnimprimirPer) {
-        this.btnimprimirPer = btnimprimirPer;
-    }
-
-    public JButton getBtnimprimirPer2() {
-        return btnimprimirPer2;
-    }
-
-    public void setBtnimprimirPer2(JButton btnimprimirPer2) {
-        this.btnimprimirPer2 = btnimprimirPer2;
     }
 
     public JButton getBtnlimpiarPer() {
@@ -499,6 +499,8 @@ public class ViewPersonas extends javax.swing.JInternalFrame {
         this.txtnombrePer = txtnombrePer;
     }
 
+ 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -564,8 +566,8 @@ public class ViewPersonas extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPersonas = new javax.swing.JTable();
         jSeparator26 = new javax.swing.JSeparator();
-        btnimprimirPer = new javax.swing.JButton();
-        btnimprimirPer2 = new javax.swing.JButton();
+        btnReporteIndividual = new javax.swing.JButton();
+        btnReporteGeneral = new javax.swing.JButton();
         btncancelarPer = new javax.swing.JButton();
 
         setClosable(true);
@@ -813,17 +815,17 @@ public class ViewPersonas extends javax.swing.JInternalFrame {
         jSeparator26.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel6.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 10, 260));
 
-        btnimprimirPer.setBackground(new java.awt.Color(249, 247, 250));
-        btnimprimirPer.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        btnimprimirPer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon-printer.png"))); // NOI18N
-        btnimprimirPer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel6.add(btnimprimirPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 40, 30));
+        btnReporteIndividual.setBackground(new java.awt.Color(249, 247, 250));
+        btnReporteIndividual.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        btnReporteIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon-printer.png"))); // NOI18N
+        btnReporteIndividual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel6.add(btnReporteIndividual, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 40, 30));
 
-        btnimprimirPer2.setBackground(new java.awt.Color(249, 247, 250));
-        btnimprimirPer2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        btnimprimirPer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/printed.png"))); // NOI18N
-        btnimprimirPer2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel6.add(btnimprimirPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 40, 30));
+        btnReporteGeneral.setBackground(new java.awt.Color(249, 247, 250));
+        btnReporteGeneral.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        btnReporteGeneral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/printed.png"))); // NOI18N
+        btnReporteGeneral.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel6.add(btnReporteGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 40, 30));
 
         btncancelarPer.setBackground(new java.awt.Color(249, 247, 250));
         btncancelarPer.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
@@ -863,13 +865,13 @@ public class ViewPersonas extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReporteGeneral;
+    private javax.swing.JButton btnReporteIndividual;
     private javax.swing.JButton btnbuscarPer;
     private javax.swing.JButton btncancelarPer;
     private javax.swing.JButton btneditarPer;
     private javax.swing.JButton btneliminarPer;
     private javax.swing.JButton btnguardarPer;
-    private javax.swing.JButton btnimprimirPer;
-    private javax.swing.JButton btnimprimirPer2;
     private javax.swing.JButton btnlimpiarPer;
     private javax.swing.JButton btnlimpiarPerbsq;
     private javax.swing.JCheckBox chekBsqPer;

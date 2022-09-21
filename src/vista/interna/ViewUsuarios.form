@@ -757,7 +757,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="btnimprimirUser">
+            <Component class="javax.swing.JButton" name="btnReporteIndividual">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -781,7 +781,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="btnimprimirUser2">
+            <Component class="javax.swing.JButton" name="btnReporteGeneral">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="f7" red="f9" type="rgb"/>

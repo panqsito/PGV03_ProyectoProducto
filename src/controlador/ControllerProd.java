@@ -6,6 +6,8 @@
 package controlador;
 
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
@@ -81,6 +83,9 @@ public class ControllerProd {
                 }
             }
         });
+        
+        this.vistpd.getBtnReporteGeneral().addActionListener(l -> reporteGeneral());
+        this.vistpd.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
         // control de botones inicio
         this.vistpd.getBtneditarProd().setEnabled(false);
         this.vistpd.getBtneliminarProd().setEnabled(false);
@@ -169,6 +174,24 @@ public class ControllerProd {
             }
         }
 
+    }
+    
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEnf().createEntityManager()), "/reporte/Producto.jasper",new HashMap());
+    }
+    
+    public void reporteIndividual() {
+        // validar si existe un registro seleccionado 
+        if (producto != null) {
+            //contruir los parametros de encio al reporte
+            Map parameters = new HashMap(); //  los hash maps son clave valor 
+            // Asignar parametros al 
+            parameters.put("cod", producto.getIdproducto()); // clave seria el id // valor seria el persona.getIdpersona
+            // llamamos al metodo del reporte
+            Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEnf().createEntityManager()), "/reporte/Prindividual.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!","Debe seleccionar una persona :P");
+        }
     }
 
     //limipiar y validar

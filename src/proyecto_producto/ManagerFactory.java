@@ -5,6 +5,8 @@
  */
 package proyecto_producto;
 
+import java.sql.Connection;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -19,4 +21,12 @@ public class ManagerFactory {
     public EntityManagerFactory getEnf() {
         return enf = Persistence.createEntityManagerFactory("Proyecto_productoPU");
     }
+
+    public static final Connection getConnection(final EntityManager entityManager) {
+        entityManager.getTransaction().begin();
+        Connection connection = entityManager.unwrap(java.sql.Connection.class);
+        return connection;
+
+    }
+   
 }

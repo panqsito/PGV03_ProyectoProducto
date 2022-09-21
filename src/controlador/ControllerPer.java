@@ -6,10 +6,11 @@
 package controlador;
 
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
-import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -82,6 +83,8 @@ public class ControllerPer {
             }
         });
         // control de botones inicio
+        this.vistpr.getBtnReporteGeneral().addActionListener(l -> reporteGeneral());
+        this.vistpr.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
         this.vistpr.getBtneditarPer().setEnabled(false);
         this.vistpr.getBtneliminarPer().setEnabled(false);
 
@@ -144,7 +147,7 @@ public class ControllerPer {
             Resouces.success(" ATENCIÓN!!!", "Persona editada correctamente :>!");
             limpiarPer();
         } else {
-            Resouces.error(" ATENCIÓN!!!",  "No se pudo editar la persona :<!");
+            Resouces.error(" ATENCIÓN!!!", "No se pudo editar la persona :<!");
             limpiarPer();
         }
     }
@@ -177,6 +180,24 @@ public class ControllerPer {
             }
         }
 
+    }
+
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEnf().createEntityManager()), "/reporte/Coffee_Landscape_1.jasper", new HashMap());
+    }
+
+    public void reporteIndividual() {
+        // validar si existe un registro seleccionado 
+        if (persona != null) {
+            //contruir los parametros de encio al reporte
+            Map parameters = new HashMap(); //  los hash maps son clave valor 
+            // Asignar parametros al 
+            parameters.put("id", persona.getIdpersona()); // clave seria el id // valor seria el persona.getIdpersona
+            // llamamos al metodo del reporte
+            Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEnf().createEntityManager()), "/reporte/Pindividual.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!","Debe seleccionar una persona :P");
+        }
     }
 
     //limipiar y validar

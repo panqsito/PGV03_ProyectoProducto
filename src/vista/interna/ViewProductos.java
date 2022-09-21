@@ -28,6 +28,22 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnReporteGeneral() {
+        return btnReporteGeneral;
+    }
+
+    public void setBtnReporteGeneral(JButton btnReporteGeneral) {
+        this.btnReporteGeneral = btnReporteGeneral;
+    }
+
+    public JButton getBtnReporteIndividual() {
+        return btnReporteIndividual;
+    }
+
+    public void setBtnReporteIndividual(JButton btnReporteIndividual) {
+        this.btnReporteIndividual = btnReporteIndividual;
+    }
+
     public JButton getBtnbuscarProd() {
         return btnbuscarProd;
     }
@@ -66,22 +82,6 @@ public class ViewProductos extends javax.swing.JInternalFrame {
 
     public void setBtnguardarPrd(JButton btnguardarPrd) {
         this.btnguardarPrd = btnguardarPrd;
-    }
-
-    public JButton getBtnimprimirProd() {
-        return btnimprimirProd;
-    }
-
-    public void setBtnimprimirProd(JButton btnimprimirProd) {
-        this.btnimprimirProd = btnimprimirProd;
-    }
-
-    public JButton getBtnimprimirProd2() {
-        return btnimprimirProd2;
-    }
-
-    public void setBtnimprimirProd2(JButton btnimprimirProd2) {
-        this.btnimprimirProd2 = btnimprimirProd2;
     }
 
     public JButton getBtnlimpiarProd() {
@@ -428,6 +428,7 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         this.txtprecioProd = txtprecioProd;
     }
 
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -484,8 +485,8 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProductos = new javax.swing.JTable();
         jSeparator26 = new javax.swing.JSeparator();
-        btnimprimirProd = new javax.swing.JButton();
-        btnimprimirProd2 = new javax.swing.JButton();
+        btnReporteIndividual = new javax.swing.JButton();
+        btnReporteGeneral = new javax.swing.JButton();
         btncancelarProd = new javax.swing.JButton();
 
         setClosable(true);
@@ -699,18 +700,18 @@ public class ViewProductos extends javax.swing.JInternalFrame {
         jSeparator26.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel6.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 10, 260));
 
-        btnimprimirProd.setBackground(new java.awt.Color(249, 247, 250));
-        btnimprimirProd.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        btnimprimirProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon-printer.png"))); // NOI18N
-        btnimprimirProd.setToolTipText("Imprimir");
-        btnimprimirProd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel6.add(btnimprimirProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 40, 30));
+        btnReporteIndividual.setBackground(new java.awt.Color(249, 247, 250));
+        btnReporteIndividual.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        btnReporteIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon-printer.png"))); // NOI18N
+        btnReporteIndividual.setToolTipText("Imprimir");
+        btnReporteIndividual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel6.add(btnReporteIndividual, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 40, 30));
 
-        btnimprimirProd2.setBackground(new java.awt.Color(249, 247, 250));
-        btnimprimirProd2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        btnimprimirProd2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/printed.png"))); // NOI18N
-        btnimprimirProd2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel6.add(btnimprimirProd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 40, 30));
+        btnReporteGeneral.setBackground(new java.awt.Color(249, 247, 250));
+        btnReporteGeneral.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        btnReporteGeneral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/printed.png"))); // NOI18N
+        btnReporteGeneral.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel6.add(btnReporteGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 40, 30));
 
         btncancelarProd.setBackground(new java.awt.Color(249, 247, 250));
         btncancelarProd.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
@@ -750,13 +751,13 @@ public class ViewProductos extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReporteGeneral;
+    private javax.swing.JButton btnReporteIndividual;
     private javax.swing.JButton btnbuscarProd;
     private javax.swing.JButton btncancelarProd;
     private javax.swing.JButton btneditarProd;
     private javax.swing.JButton btneliminarProd;
     private javax.swing.JButton btnguardarPrd;
-    private javax.swing.JButton btnimprimirProd;
-    private javax.swing.JButton btnimprimirProd2;
     private javax.swing.JButton btnlimpiarProd;
     private javax.swing.JButton btnlimpiarProdbsq;
     private javax.swing.JCheckBox chekBsqProd;
